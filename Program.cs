@@ -19,6 +19,8 @@ namespace Tic_Tac_To
                 if (winner == 1)
                 {
                     Console.WriteLine("Congrats player 1 you won!");
+                    Console.ResetColor();
+                    Console.ReadKey();
                 }
                 else if (winner == 0)
                 {
@@ -30,11 +32,15 @@ namespace Tic_Tac_To
                         if (winner == 1)
                         {
                             Console.WriteLine("Congrats player 2 you won!");
+                            Console.ResetColor();
+                            Console.ReadKey();
                         }
                     }
                     else if (tie == 1)
                     {
                         Console.WriteLine("It is a tie");
+                        Console.ResetColor();
+                        Console.ReadKey();  
                         winner = 1;
                     }
                 }
