@@ -7,6 +7,8 @@ namespace Tic_Tac_To
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Tic Tac Toe game!");
+            
             List<char> board = new List<char> { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
             displayboard(board);
             int winner = 0;
@@ -16,7 +18,7 @@ namespace Tic_Tac_To
                 winner = checkWinner(board);
                 if (winner == 1)
                 {
-                    Console.WriteLine("Congrats player 1 you won");
+                    Console.WriteLine("Congrats player 1 you won!");
                 }
                 else if (winner == 0)
                 {
@@ -27,7 +29,7 @@ namespace Tic_Tac_To
                         winner = checkWinner(board);
                         if (winner == 1)
                         {
-                            Console.WriteLine("Congrats player 2 you won");
+                            Console.WriteLine("Congrats player 2 you won!");
                         }
                     }
                     else if (tie == 1)
@@ -57,6 +59,7 @@ namespace Tic_Tac_To
         static void player1turn(List<char> board)
         {
             char player1 = 'x';
+            Console.WriteLine();
             Console.WriteLine("x's turn to choose a square (1-9): ");
             int turn = int.Parse(Console.ReadLine());
             updateboard(board, turn, player1);
@@ -65,6 +68,7 @@ namespace Tic_Tac_To
         static void player2turn(List<char> board)
         {
             char player2 = 'o';
+            Console.WriteLine();
             Console.WriteLine("o's turn to choose a square (1-9): ");
             int turn = int.Parse(Console.ReadLine());
             updateboard(board, turn, player2);
@@ -72,35 +76,15 @@ namespace Tic_Tac_To
 
         static int checkWinner(List<char> board)
         {
-            if (board[0] == board[1] && board[1] == board[2])
-            {
-                return 1;
-            }
-            else if (board[3] == board[4] && board[4] == board[5])
-            {
-                return 1;
-            }
-            else if (board[6] == board[7] && board[7] == board[8])
-            {
-                return 1;
-            }
-            else if (board[0] == board[3] && board[3] == board[6])
-            {
-                return 1;
-            }
-            else if (board[1] == board[4] && board[4] == board[7])
-            {
-                return 1;
-            }
-            else if (board[2] == board[5] && board[5] == board[8])
-            {
-                return 1;
-            }
-            else if (board[0] == board[4] && board[4] == board[8])
-            {
-                return 1;
-            }
-            else if (board[2] == board[4] && board[4] == board[6])
+            if ((board[0] == board[1] && board[1] == board[2]) || 
+                (board[3] == board[4] && board[4] == board[5]) ||
+                (board[3] == board[4] && board[4] == board[5]) ||
+                (board[6] == board[7] && board[7] == board[8]) ||
+                (board[0] == board[3] && board[3] == board[6]) ||
+                (board[1] == board[4] && board[4] == board[7]) ||
+                (board[2] == board[5] && board[5] == board[8]) ||
+                (board[0] == board[4] && board[4] == board[8]) ||
+                (board[2] == board[4] && board[4] == board[6]))
             {
                 return 1;
             }
