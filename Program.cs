@@ -43,6 +43,9 @@ namespace Tic_Tac_To
 
         static void displayboard(List<char> board)
         {   
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            
             Console.WriteLine("       |       |");
             Console.WriteLine("   " + board[0] + "   |   " + board[1] + "   |   " + board[2]);
             Console.WriteLine("       |       |");
@@ -60,6 +63,7 @@ namespace Tic_Tac_To
         {
             char player1 = 'x';
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;            
             Console.WriteLine("x's turn to choose a square (1-9): ");
             int turn = int.Parse(Console.ReadLine());
             updateboard(board, turn, player1);
@@ -69,6 +73,7 @@ namespace Tic_Tac_To
         {
             char player2 = 'o';
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("o's turn to choose a square (1-9): ");
             int turn = int.Parse(Console.ReadLine());
             updateboard(board, turn, player2);
