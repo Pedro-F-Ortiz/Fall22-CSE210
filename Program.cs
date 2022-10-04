@@ -35,21 +35,38 @@ namespace Tic_Tac_To
                         Console.WriteLine("It is a tie");
                         winner = 1;
                     }
+                    displayEmptyBox(board);
                 }
             }
         }
 
+        static void displayEmptyBox(List<char> board)
+        {
+            int counter = 0;
+
+            foreach (char item in board)
+            {
+                if (item != 'x' || item != 'o')
+                {
+                    // if item not 'x' or item not 'o' 
+                    counter += 1;
+                }
+
+            }
+            Console.WriteLine($"The total number of blanks is {counter}");
+        }
+
         static void displayboard(List<char> board)
-        {   
+        {
             Console.WriteLine("       |       |");
             Console.WriteLine("   " + board[0] + "   |   " + board[1] + "   |   " + board[2]);
             Console.WriteLine("       |       |");
             Console.WriteLine("-------+-------+-------");
             Console.WriteLine("       |       |");
             Console.WriteLine("   " + board[3] + "   |   " + board[4] + "   |   " + board[5]);
-            Console.WriteLine("       |       |");            
+            Console.WriteLine("       |       |");
             Console.WriteLine("-------+-------+-------");
-            Console.WriteLine("       |       |");            
+            Console.WriteLine("       |       |");
             Console.WriteLine("   " + board[6] + "   |   " + board[7] + "   |   " + board[8]);
             Console.WriteLine("       |       |");
         }
@@ -172,5 +189,3 @@ namespace Tic_Tac_To
         }
     }
 }
-
-
